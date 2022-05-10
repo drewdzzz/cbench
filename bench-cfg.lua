@@ -13,6 +13,8 @@ if #arg < 2 then
     wal_mode = 'none'
 end
 
+--require('fiber').set_default_slice(1000000)
+
 box.cfg {
     slab_alloc_arena    = 1,
     pid_file            = "tarantool.pid",
@@ -28,9 +30,9 @@ workloads = {
     -- Run one extra test to warm up the server
     {tests = tests, type = 'hash', parts = { 'num' }},
     {tests = tests, type = 'hash', parts = { 'num' }},
-    {tests = tests, type = 'hash', parts = { 'str' }},
+--    {tests = tests, type = 'hash', parts = { 'str' }},
     {tests = tests, type = 'tree', parts = { 'num' }},
-    {tests = tests, type = 'tree', parts = { 'str' }},
+  --  {tests = tests, type = 'tree', parts = { 'str' }},
 --[[
     {tests = tests, type = 'hash', parts = { 'num', 'num' }},
     {tests = tests, type = 'hash', parts = { 'num', 'str'}},

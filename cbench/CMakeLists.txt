@@ -2,5 +2,5 @@ if (APPLE)
     set(CMAKE_SHARED_LINKER_FLAGS "${CMAKE_SHARED_LINKER_FLAGS} -undefined suppress -flat_namespace")
 endif(APPLE)
 
-include_directories("../../" "../../src/" "../../third_party/luajit/src")
+include_directories("../../" "../../src/" "../../../third_party/luajit/src" "../../../src/lib/msgpuck")
 add_library(bench SHARED bench.c)
